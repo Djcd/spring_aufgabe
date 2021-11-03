@@ -32,6 +32,6 @@ public class DoctorController {
         if(doc == null)
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 
-        return doctorService.getDoctorById(id);
+        return doc;
     }
 }
