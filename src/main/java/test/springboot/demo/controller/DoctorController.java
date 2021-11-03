@@ -18,12 +18,12 @@ public class DoctorController {
     private DefaultDoctorService doctorService;
 
     @GetMapping
-    public List<DoctorData> getCustomers() {
+    public List<DoctorData> getDoctors() {
         return doctorService.getAllDoctors();
     }
 
     @GetMapping("/{id}")
-    public DoctorData getCustomer(@PathVariable Long id){
+    public DoctorData getDoctor(@PathVariable Long id){
         if(id > 0 && id < 9)
             throw new ResponseStatusException(HttpStatus.SEE_OTHER);
 
