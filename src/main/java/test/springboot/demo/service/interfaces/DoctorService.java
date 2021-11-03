@@ -1,4 +1,4 @@
-package test.springboot.demo.service;
+package test.springboot.demo.service.interfaces;
 
 import test.springboot.demo.dto.DoctorData;
 

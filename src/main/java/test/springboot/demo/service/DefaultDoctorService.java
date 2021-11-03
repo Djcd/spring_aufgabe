@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import test.springboot.demo.dto.DoctorData;
 import test.springboot.demo.model.Doctor;
 import test.springboot.demo.repository.DoctorRepository;
+import test.springboot.demo.service.interfaces.DoctorService;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
