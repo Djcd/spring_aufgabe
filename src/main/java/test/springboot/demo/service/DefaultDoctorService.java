@@ -46,15 +46,13 @@ public class DefaultDoctorService implements DoctorService {
     }
 
     private DoctorData populateDoctorData(final Doctor doctor){
-        DoctorData doctorData = new DoctorData();
-        doctorData.setId(doctor.getId());
-        doctorData.setName(doctor.getName());
-        return  doctorData;
+        DoctorData doctorData = new DoctorData(doctor.getId(), doctor.getName());
+        return doctorData;
     }
 
     private Doctor populateCustomerEntity(DoctorData doctorData){
         Doctor doctor = new Doctor();
         doctor.setName(doctorData.getName());
-        return  doctor;
+        return doctor;
     }
 }
