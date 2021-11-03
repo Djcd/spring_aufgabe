@@ -25,12 +25,12 @@ public class DoctorController {
     @GetMapping("/{id}")
     public DoctorData getDoctor(@PathVariable Long id){
         if(id > 0 && id < 9)
-            throw new ResponseStatusException(HttpStatus.SEE_OTHER);
+            throw new ResponseStatusException(HttpStatus.SEE_OTHER, "See another doctor");
 
         DoctorData doc = doctorService.getDoctorById(id);
 
         if(doc == null)
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Impossible to retrieve the incarnation "+id);
 
         return doc;
     }
