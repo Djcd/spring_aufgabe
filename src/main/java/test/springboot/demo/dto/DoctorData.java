@@ -1,8 +1,8 @@
 package test.springboot.demo.dto;
 
 public class DoctorData {
-    private Long id;
-    private String Name;
+    private final Long id;
+    private final String Name;
 
     public DoctorData(Long id, String name) {
         this.id = id;
