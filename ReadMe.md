@@ -19,3 +19,5 @@
       (12, 'Peter Capaldi'),
       (13, 'Jodie Whittaker');``
 4. Play around
+5. Create new doctor: ``curl -d '{"name":"Who"}' -H "Content-Type: application/json" -X POST http://localhost:8080/doctor``
+6. Delete doctor: ``curl -X DELETE http://localhost:8080/doctor/$id``

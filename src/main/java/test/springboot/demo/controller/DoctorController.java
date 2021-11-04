@@ -34,12 +34,12 @@ public class DoctorController {
         return doc;
     }
 
-    @PostMapping("/doctor")
+    @PostMapping
     public DoctorData saveDoctor(final @RequestBody DoctorData doctorData) {
         return doctorService.saveDoctor(doctorData);
     }
 
-    @DeleteMapping("/doctor/{id}")
+    @DeleteMapping("/{id}")
     public Boolean deleteDoctor(@PathVariable Long id) {
         return doctorService.deleteDoctor(id);
     }
