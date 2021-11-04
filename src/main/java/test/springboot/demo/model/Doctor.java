@@ -16,7 +16,8 @@ public class Doctor {
     public Doctor() {
     }
 
-    public Doctor(String name) {
+    public Doctor(Long id, String name) {
+        this.id = id;
         Name = name;
     }
 

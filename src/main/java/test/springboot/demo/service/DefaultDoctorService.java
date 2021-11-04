@@ -29,6 +29,12 @@ public class DefaultDoctorService implements DoctorService {
     }
 
     @Override
+    public DoctorData updateDoctor(DoctorData doctor) {
+        Doctor doc = populateCustomerEntity(doctor);
+        return populateDoctorData(doctorRepository.save(doc));
+    }
+
+    @Override
     public List<DoctorData> getAllDoctors() {
         List<DoctorData> doctors = new ArrayList<>();
         List<Doctor> doctorList = doctorRepository.findAll();
@@ -53,8 +59,7 @@ public class DefaultDoctorService implements DoctorService {
     }
 
     private Doctor populateCustomerEntity(DoctorData doctorData){
-        Doctor doctor = new Doctor();
-        doctor.setName(doctorData.getName());
+        Doctor doctor = new Doctor(doctorData.getId(), doctorData.getName());
         return doctor;
     }
 }

@@ -36,7 +36,16 @@ public class DoctorController {
 
     @PostMapping
     public DoctorData saveDoctor(final @RequestBody DoctorData doctorData) {
+        if(doctorData.getName() == null)
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         return doctorService.saveDoctor(doctorData);
+    }
+
+    @PutMapping
+    public DoctorData updateDoctor(final @RequestBody DoctorData doctorData) {
+        if(doctorData.getId() == null || doctorData.getName() == null)
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        return doctorService.updateDoctor(doctorData);
     }
 
     @DeleteMapping("/{id}")
