@@ -17,13 +17,15 @@ public class DefaultDoctorService implements DoctorService {
     private DoctorRepository doctorRepository;
 
     @Override
-    public DoctorData saveDoctor(DoctorData customer) {
-        return null;
+    public DoctorData saveDoctor(DoctorData doctor) {
+        Doctor doc = populateCustomerEntity(doctor);
+        return populateDoctorData(doctorRepository.save(doc));
     }
 
     @Override
     public boolean deleteDoctor(Long doctorId) {
-        return false;
+        doctorRepository.deleteById(doctorId);
+        return true;
     }
 
     @Override

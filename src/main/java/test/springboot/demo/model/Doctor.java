@@ -16,6 +16,10 @@ public class Doctor {
     public Doctor() {
     }
 
+    public Doctor(String name) {
+        Name = name;
+    }
+
     public Long getId() {
         return id;
     }
